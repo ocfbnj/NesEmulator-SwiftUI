@@ -34,7 +34,7 @@ struct GameView: View {
                         fatalError("load rom failed")
                     }
 
-                    runNesCore()
+                    runNesCoreInBackground()
                 }
                 .onDisappear {
                     cancel?.cancel()
@@ -72,13 +72,21 @@ struct GameView: View {
         return true
     }
 
-    private func runNesCore() {
-        cancel = Timer.publish(every: 1.0 / GameView.frameRate, on: .main, in: .common)
-            .autoconnect()
-            .sink { _ in
-                let cframe = perform_once(self.bus)
-                self.frame.update(cframe)
-            }
+    private func runNesCoreInBackground() {
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.cancel = Timer
+                .publish(every: 1.0 / GameView.frameRate, on: .current, in: .default)
+                .autoconnect()
+                .sink { _ in
+                    let cframe = perform_once(self.bus)
+
+                    DispatchQueue.main.async {
+                        self.frame.update(cframe)
+                    }
+                }
+
+            RunLoop.current.run()
+        }
     }
 }
 
