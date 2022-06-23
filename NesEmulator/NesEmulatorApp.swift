@@ -11,7 +11,7 @@ import SwiftUI
 struct NesEmulatorApp: App {
     var body: some Scene {
         WindowGroup {
-            GameView()
+            HomeView()
         }
     }
 }

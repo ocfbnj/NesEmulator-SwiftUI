@@ -11,42 +11,53 @@ import SwiftUI
 struct GameView: View {
     static let frameRate = 60.0
 
-    let romData = NSDataAsset(name: "super_mario_bros")!.data
+    var name = "Super Mario Bros"
+    var romData = NSDataAsset(name: "super_mario_bros")!.data
 
-    @State var cancel: AnyCancellable?
     @State var bus = CBus(ptr: nil)
+    @State var invalid = false
+    @State var cancel: AnyCancellable?
     @StateObject var frame = Frame()
 
     var body: some View {
-        HStack {
-            VStack {
-                Spacer()
-                DirectionKeyView(bus: self.bus)
-            }
-
-            Spacer()
-
-            NesView(frameData: self.frame)
-                .aspectRatio(Frame.ratio, contentMode: .fit)
-                .ignoresSafeArea()
-                .onAppear {
-                    if !loadRom(romData) {
-                        fatalError("load rom failed")
+        Group {
+            if !invalid {
+                ZStack {
+                    VStack {
+                        NesView(frameData: self.frame)
+                            .aspectRatio(Frame.ratio, contentMode: .fit)
+                        Spacer()
                     }
 
-                    runNesCoreInBackground()
+                    VStack {
+                        Spacer()
+                        HStack {
+                            DirectionKeyView(bus: self.bus)
+                            Spacer()
+                            ControlKeyView(bus: self.bus)
+                        }
+                        .padding()
+                    }
+                    .opacity(0.6)
                 }
-                .onDisappear {
-                    cancel?.cancel()
-                    free_bus(self.bus)
-                }
-
-            Spacer()
-
-            VStack {
-                Spacer()
-                ControlKeyView(bus: self.bus)
+            } else {
+                Text("Unsupported NES ROM")
+                    .font(.title)
             }
+        }
+        .navigationTitle(name)
+        .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            invalid = !loadRom(romData)
+            if invalid {
+                return
+            }
+
+            runNesCore()
+        }
+        .onDisappear {
+            cancel?.cancel()
+            free_bus(self.bus)
         }
     }
 
@@ -72,27 +83,18 @@ struct GameView: View {
         return true
     }
 
-    private func runNesCoreInBackground() {
-        DispatchQueue.global(qos: .userInteractive).async {
-            self.cancel = Timer
-                .publish(every: 1.0 / GameView.frameRate, on: .current, in: .default)
-                .autoconnect()
-                .sink { _ in
-                    let cframe = perform_once(self.bus)
-
-                    DispatchQueue.main.async {
-                        self.frame.update(cframe)
-                    }
-                }
-
-            RunLoop.current.run()
-        }
+    private func runNesCore() {
+        cancel = Timer.publish(every: 1.0 / GameView.frameRate, on: .main, in: .default)
+            .autoconnect()
+            .sink { _ in
+                let cframe = perform_once(self.bus)
+                self.frame.update(cframe)
+            }
     }
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         GameView()
-            .previewInterfaceOrientation(.landscapeRight)
     }
 }
