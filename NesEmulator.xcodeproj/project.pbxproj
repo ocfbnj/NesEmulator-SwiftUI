@@ -1,0 +1,644 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		183DF16E2862C99E0088FE1C /* NesEmulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DF16D2862C99E0088FE1C /* NesEmulatorApp.swift */; };
+		183DF1702862C99E0088FE1C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DF16F2862C99E0088FE1C /* GameView.swift */; };
+		183DF1722862C9A00088FE1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183DF1712862C9A00088FE1C /* Assets.xcassets */; };
+		183DF1752862C9A00088FE1C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183DF1742862C9A00088FE1C /* Preview Assets.xcassets */; };
+		183DF1B92862CF090088FE1C /* Bus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF17C2862CF090088FE1C /* Bus.cpp */; };
+		183DF1BA2862CF090088FE1C /* Cartridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF17E2862CF090088FE1C /* Cartridge.cpp */; };
+		183DF1BB2862CF090088FE1C /* Bus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF19F2862CF090088FE1C /* Bus.cpp */; };
+		183DF1BC2862CF090088FE1C /* Mirroring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1A02862CF090088FE1C /* Mirroring.cpp */; };
+		183DF1BD2862CF090088FE1C /* PPU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1A12862CF090088FE1C /* PPU.cpp */; };
+		183DF1BE2862CF090088FE1C /* Mapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1A22862CF090088FE1C /* Mapper.cpp */; };
+		183DF1BF2862CF090088FE1C /* Cartridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1A32862CF090088FE1C /* Cartridge.cpp */; };
+		183DF1C02862CF090088FE1C /* Mapper4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1A52862CF090088FE1C /* Mapper4.cpp */; };
+		183DF1C12862CF090088FE1C /* Mapper2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1A62862CF090088FE1C /* Mapper2.cpp */; };
+		183DF1C22862CF090088FE1C /* Mapper3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1A72862CF090088FE1C /* Mapper3.cpp */; };
+		183DF1C32862CF090088FE1C /* Mapper1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1A82862CF090088FE1C /* Mapper1.cpp */; };
+		183DF1C42862CF090088FE1C /* Mapper0.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1A92862CF090088FE1C /* Mapper0.cpp */; };
+		183DF1C52862CF090088FE1C /* Joypad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1AA2862CF090088FE1C /* Joypad.cpp */; };
+		183DF1C62862CF090088FE1C /* literals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1AB2862CF090088FE1C /* literals.cpp */; };
+		183DF1C72862CF090088FE1C /* DMC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1AD2862CF090088FE1C /* DMC.cpp */; };
+		183DF1C82862CF090088FE1C /* Sweep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1AE2862CF090088FE1C /* Sweep.cpp */; };
+		183DF1C92862CF090088FE1C /* Pulse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1AF2862CF090088FE1C /* Pulse.cpp */; };
+		183DF1CA2862CF090088FE1C /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1B02862CF090088FE1C /* Timer.cpp */; };
+		183DF1CB2862CF090088FE1C /* Noise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1B12862CF090088FE1C /* Noise.cpp */; };
+		183DF1CC2862CF090088FE1C /* LengthCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1B22862CF090088FE1C /* LengthCounter.cpp */; };
+		183DF1CD2862CF090088FE1C /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1B32862CF090088FE1C /* Triangle.cpp */; };
+		183DF1CE2862CF090088FE1C /* StatusRegister.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1B42862CF090088FE1C /* StatusRegister.cpp */; };
+		183DF1CF2862CF090088FE1C /* Envelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1B52862CF090088FE1C /* Envelope.cpp */; };
+		183DF1D02862CF090088FE1C /* APU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1B62862CF090088FE1C /* APU.cpp */; };
+		183DF1D12862CF090088FE1C /* CPU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1B72862CF090088FE1C /* CPU.cpp */; };
+		183DF1D22862CF090088FE1C /* NesFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1B82862CF090088FE1C /* NesFile.cpp */; };
+		183DF1D52862E18A0088FE1C /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1D42862E18A0088FE1C /* Frame.swift */; };
+		187ABE972863603000372297 /* NesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABE962863603000372297 /* NesView.swift */; };
+		187ABE992863608900372297 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABE982863608900372297 /* Renderer.swift */; };
+		187ABE9B2863660800372297 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 187ABE9A2863660800372297 /* Shaders.metal */; };
+		187ABE9E28642FF000372297 /* ButtonKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABE9D28642FF000372297 /* ButtonKey.swift */; };
+		187ABEA0286430DC00372297 /* DirectionKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABE9F286430DC00372297 /* DirectionKeyView.swift */; };
+		187ABEA22864341900372297 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABEA12864341900372297 /* KeyView.swift */; };
+		187ABEA5286437AE00372297 /* ControlKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABEA4286437AE00372297 /* ControlKeyView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		183DF16A2862C99E0088FE1C /* NesEmulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NesEmulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		183DF16D2862C99E0088FE1C /* NesEmulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NesEmulatorApp.swift; sourceTree = "<group>"; };
+		183DF16F2862C99E0088FE1C /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		183DF1712862C9A00088FE1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		183DF1742862C9A00088FE1C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		183DF17C2862CF090088FE1C /* Bus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bus.cpp; sourceTree = "<group>"; };
+		183DF17D2862CF090088FE1C /* Bus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bus.h; sourceTree = "<group>"; };
+		183DF17E2862CF090088FE1C /* Cartridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cartridge.cpp; sourceTree = "<group>"; };
+		183DF1812862CF090088FE1C /* Bus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bus.h; sourceTree = "<group>"; };
+		183DF1822862CF090088FE1C /* Mapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mapper.h; sourceTree = "<group>"; };
+		183DF1842862CF090088FE1C /* Mapper1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mapper1.h; sourceTree = "<group>"; };
+		183DF1852862CF090088FE1C /* Mapper2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mapper2.h; sourceTree = "<group>"; };
+		183DF1862862CF090088FE1C /* Mapper3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mapper3.h; sourceTree = "<group>"; };
+		183DF1872862CF090088FE1C /* Mapper4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mapper4.h; sourceTree = "<group>"; };
+		183DF1882862CF090088FE1C /* Mapper0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mapper0.h; sourceTree = "<group>"; };
+		183DF1892862CF090088FE1C /* literals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = literals.h; sourceTree = "<group>"; };
+		183DF18A2862CF090088FE1C /* NesFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NesFile.h; sourceTree = "<group>"; };
+		183DF18B2862CF090088FE1C /* PPU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPU.h; sourceTree = "<group>"; };
+		183DF18C2862CF090088FE1C /* Mirroring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mirroring.h; sourceTree = "<group>"; };
+		183DF18D2862CF090088FE1C /* Cartridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cartridge.h; sourceTree = "<group>"; };
+		183DF18E2862CF090088FE1C /* CPU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPU.h; sourceTree = "<group>"; };
+		183DF1902862CF090088FE1C /* Noise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Noise.h; sourceTree = "<group>"; };
+		183DF1912862CF090088FE1C /* LengthCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LengthCounter.h; sourceTree = "<group>"; };
+		183DF1922862CF090088FE1C /* StatusRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusRegister.h; sourceTree = "<group>"; };
+		183DF1932862CF090088FE1C /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		183DF1942862CF090088FE1C /* DMC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMC.h; sourceTree = "<group>"; };
+		183DF1952862CF090088FE1C /* Pulse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pulse.h; sourceTree = "<group>"; };
+		183DF1962862CF090088FE1C /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
+		183DF1972862CF090088FE1C /* Sweep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sweep.h; sourceTree = "<group>"; };
+		183DF1982862CF090088FE1C /* Envelope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Envelope.h; sourceTree = "<group>"; };
+		183DF1992862CF090088FE1C /* APU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APU.h; sourceTree = "<group>"; };
+		183DF19A2862CF090088FE1C /* Joypad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joypad.h; sourceTree = "<group>"; };
+		183DF19B2862CF090088FE1C /* Cartridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cartridge.h; sourceTree = "<group>"; };
+		183DF19C2862CF090088FE1C /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		183DF19F2862CF090088FE1C /* Bus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bus.cpp; sourceTree = "<group>"; };
+		183DF1A02862CF090088FE1C /* Mirroring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mirroring.cpp; sourceTree = "<group>"; };
+		183DF1A12862CF090088FE1C /* PPU.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PPU.cpp; sourceTree = "<group>"; };
+		183DF1A22862CF090088FE1C /* Mapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mapper.cpp; sourceTree = "<group>"; };
+		183DF1A32862CF090088FE1C /* Cartridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cartridge.cpp; sourceTree = "<group>"; };
+		183DF1A52862CF090088FE1C /* Mapper4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mapper4.cpp; sourceTree = "<group>"; };
+		183DF1A62862CF090088FE1C /* Mapper2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mapper2.cpp; sourceTree = "<group>"; };
+		183DF1A72862CF090088FE1C /* Mapper3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mapper3.cpp; sourceTree = "<group>"; };
+		183DF1A82862CF090088FE1C /* Mapper1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mapper1.cpp; sourceTree = "<group>"; };
+		183DF1A92862CF090088FE1C /* Mapper0.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mapper0.cpp; sourceTree = "<group>"; };
+		183DF1AA2862CF090088FE1C /* Joypad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Joypad.cpp; sourceTree = "<group>"; };
+		183DF1AB2862CF090088FE1C /* literals.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = literals.cpp; sourceTree = "<group>"; };
+		183DF1AD2862CF090088FE1C /* DMC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DMC.cpp; sourceTree = "<group>"; };
+		183DF1AE2862CF090088FE1C /* Sweep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sweep.cpp; sourceTree = "<group>"; };
+		183DF1AF2862CF090088FE1C /* Pulse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pulse.cpp; sourceTree = "<group>"; };
+		183DF1B02862CF090088FE1C /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
+		183DF1B12862CF090088FE1C /* Noise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Noise.cpp; sourceTree = "<group>"; };
+		183DF1B22862CF090088FE1C /* LengthCounter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LengthCounter.cpp; sourceTree = "<group>"; };
+		183DF1B32862CF090088FE1C /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
+		183DF1B42862CF090088FE1C /* StatusRegister.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StatusRegister.cpp; sourceTree = "<group>"; };
+		183DF1B52862CF090088FE1C /* Envelope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Envelope.cpp; sourceTree = "<group>"; };
+		183DF1B62862CF090088FE1C /* APU.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = APU.cpp; sourceTree = "<group>"; };
+		183DF1B72862CF090088FE1C /* CPU.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPU.cpp; sourceTree = "<group>"; };
+		183DF1B82862CF090088FE1C /* NesFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NesFile.cpp; sourceTree = "<group>"; };
+		183DF1D42862E18A0088FE1C /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		187ABE962863603000372297 /* NesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NesView.swift; sourceTree = "<group>"; };
+		187ABE982863608900372297 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		187ABE9A2863660800372297 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		187ABE9C2863679C00372297 /* Vertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
+		187ABE9D28642FF000372297 /* ButtonKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonKey.swift; sourceTree = "<group>"; };
+		187ABE9F286430DC00372297 /* DirectionKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionKeyView.swift; sourceTree = "<group>"; };
+		187ABEA12864341900372297 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
+		187ABEA4286437AE00372297 /* ControlKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlKeyView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		183DF1672862C99E0088FE1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		183DF1612862C99E0088FE1C = {
+			isa = PBXGroup;
+			children = (
+				183DF17B2862CF090088FE1C /* nes */,
+				183DF16C2862C99E0088FE1C /* NesEmulator */,
+				183DF16B2862C99E0088FE1C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		183DF16B2862C99E0088FE1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				183DF16A2862C99E0088FE1C /* NesEmulator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		183DF16C2862C99E0088FE1C /* NesEmulator */ = {
+			isa = PBXGroup;
+			children = (
+				183DF16D2862C99E0088FE1C /* NesEmulatorApp.swift */,
+				187ABE982863608900372297 /* Renderer.swift */,
+				183DF1712862C9A00088FE1C /* Assets.xcassets */,
+				183DF1D32862E1780088FE1C /* Model */,
+				183DF1732862C9A00088FE1C /* Preview Content */,
+				183DF1D62862FBD10088FE1C /* View */,
+			);
+			path = NesEmulator;
+			sourceTree = "<group>";
+		};
+		183DF1732862C9A00088FE1C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				183DF1742862C9A00088FE1C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		183DF17B2862CF090088FE1C /* nes */ = {
+			isa = PBXGroup;
+			children = (
+				183DF17C2862CF090088FE1C /* Bus.cpp */,
+				183DF17E2862CF090088FE1C /* Cartridge.cpp */,
+				183DF19C2862CF090088FE1C /* Bridging-Header.h */,
+				183DF17D2862CF090088FE1C /* Bus.h */,
+				183DF19B2862CF090088FE1C /* Cartridge.h */,
+				187ABE9C2863679C00372297 /* Vertex.h */,
+				187ABE9A2863660800372297 /* Shaders.metal */,
+				183DF17F2862CF090088FE1C /* include */,
+				183DF19D2862CF090088FE1C /* src */,
+			);
+			path = nes;
+			sourceTree = "<group>";
+		};
+		183DF17F2862CF090088FE1C /* include */ = {
+			isa = PBXGroup;
+			children = (
+				183DF1802862CF090088FE1C /* nes */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		183DF1802862CF090088FE1C /* nes */ = {
+			isa = PBXGroup;
+			children = (
+				183DF1812862CF090088FE1C /* Bus.h */,
+				183DF1822862CF090088FE1C /* Mapper.h */,
+				183DF1832862CF090088FE1C /* Mapper */,
+				183DF1892862CF090088FE1C /* literals.h */,
+				183DF18A2862CF090088FE1C /* NesFile.h */,
+				183DF18B2862CF090088FE1C /* PPU.h */,
+				183DF18C2862CF090088FE1C /* Mirroring.h */,
+				183DF18D2862CF090088FE1C /* Cartridge.h */,
+				183DF18E2862CF090088FE1C /* CPU.h */,
+				183DF18F2862CF090088FE1C /* APU */,
+				183DF1992862CF090088FE1C /* APU.h */,
+				183DF19A2862CF090088FE1C /* Joypad.h */,
+			);
+			path = nes;
+			sourceTree = "<group>";
+		};
+		183DF1832862CF090088FE1C /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				183DF1842862CF090088FE1C /* Mapper1.h */,
+				183DF1852862CF090088FE1C /* Mapper2.h */,
+				183DF1862862CF090088FE1C /* Mapper3.h */,
+				183DF1872862CF090088FE1C /* Mapper4.h */,
+				183DF1882862CF090088FE1C /* Mapper0.h */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		183DF18F2862CF090088FE1C /* APU */ = {
+			isa = PBXGroup;
+			children = (
+				183DF1902862CF090088FE1C /* Noise.h */,
+				183DF1912862CF090088FE1C /* LengthCounter.h */,
+				183DF1922862CF090088FE1C /* StatusRegister.h */,
+				183DF1932862CF090088FE1C /* Timer.h */,
+				183DF1942862CF090088FE1C /* DMC.h */,
+				183DF1952862CF090088FE1C /* Pulse.h */,
+				183DF1962862CF090088FE1C /* Triangle.h */,
+				183DF1972862CF090088FE1C /* Sweep.h */,
+				183DF1982862CF090088FE1C /* Envelope.h */,
+			);
+			path = APU;
+			sourceTree = "<group>";
+		};
+		183DF19D2862CF090088FE1C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				183DF19E2862CF090088FE1C /* nes */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		183DF19E2862CF090088FE1C /* nes */ = {
+			isa = PBXGroup;
+			children = (
+				183DF19F2862CF090088FE1C /* Bus.cpp */,
+				183DF1A02862CF090088FE1C /* Mirroring.cpp */,
+				183DF1A12862CF090088FE1C /* PPU.cpp */,
+				183DF1A22862CF090088FE1C /* Mapper.cpp */,
+				183DF1A32862CF090088FE1C /* Cartridge.cpp */,
+				183DF1A42862CF090088FE1C /* Mapper */,
+				183DF1AA2862CF090088FE1C /* Joypad.cpp */,
+				183DF1AB2862CF090088FE1C /* literals.cpp */,
+				183DF1AC2862CF090088FE1C /* APU */,
+				183DF1B62862CF090088FE1C /* APU.cpp */,
+				183DF1B72862CF090088FE1C /* CPU.cpp */,
+				183DF1B82862CF090088FE1C /* NesFile.cpp */,
+			);
+			path = nes;
+			sourceTree = "<group>";
+		};
+		183DF1A42862CF090088FE1C /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				183DF1A52862CF090088FE1C /* Mapper4.cpp */,
+				183DF1A62862CF090088FE1C /* Mapper2.cpp */,
+				183DF1A72862CF090088FE1C /* Mapper3.cpp */,
+				183DF1A82862CF090088FE1C /* Mapper1.cpp */,
+				183DF1A92862CF090088FE1C /* Mapper0.cpp */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		183DF1AC2862CF090088FE1C /* APU */ = {
+			isa = PBXGroup;
+			children = (
+				183DF1AD2862CF090088FE1C /* DMC.cpp */,
+				183DF1AE2862CF090088FE1C /* Sweep.cpp */,
+				183DF1AF2862CF090088FE1C /* Pulse.cpp */,
+				183DF1B02862CF090088FE1C /* Timer.cpp */,
+				183DF1B12862CF090088FE1C /* Noise.cpp */,
+				183DF1B22862CF090088FE1C /* LengthCounter.cpp */,
+				183DF1B32862CF090088FE1C /* Triangle.cpp */,
+				183DF1B42862CF090088FE1C /* StatusRegister.cpp */,
+				183DF1B52862CF090088FE1C /* Envelope.cpp */,
+			);
+			path = APU;
+			sourceTree = "<group>";
+		};
+		183DF1D32862E1780088FE1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				183DF1D42862E18A0088FE1C /* Frame.swift */,
+				187ABE9D28642FF000372297 /* ButtonKey.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		183DF1D62862FBD10088FE1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				183DF16F2862C99E0088FE1C /* GameView.swift */,
+				187ABE962863603000372297 /* NesView.swift */,
+				187ABEA6286442CF00372297 /* Key */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		187ABEA6286442CF00372297 /* Key */ = {
+			isa = PBXGroup;
+			children = (
+				187ABEA4286437AE00372297 /* ControlKeyView.swift */,
+				187ABE9F286430DC00372297 /* DirectionKeyView.swift */,
+				187ABEA12864341900372297 /* KeyView.swift */,
+			);
+			path = Key;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		183DF1692862C99E0088FE1C /* NesEmulator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 183DF1782862C9A00088FE1C /* Build configuration list for PBXNativeTarget "NesEmulator" */;
+			buildPhases = (
+				183DF1662862C99E0088FE1C /* Sources */,
+				183DF1672862C99E0088FE1C /* Frameworks */,
+				183DF1682862C99E0088FE1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NesEmulator;
+			productName = NesEmulator;
+			productReference = 183DF16A2862C99E0088FE1C /* NesEmulator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		183DF1622862C99E0088FE1C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					183DF1692862C99E0088FE1C = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 183DF1652862C99E0088FE1C /* Build configuration list for PBXProject "NesEmulator" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 183DF1612862C99E0088FE1C;
+			productRefGroup = 183DF16B2862C99E0088FE1C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				183DF1692862C99E0088FE1C /* NesEmulator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		183DF1682862C99E0088FE1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				183DF1752862C9A00088FE1C /* Preview Assets.xcassets in Resources */,
+				183DF1722862C9A00088FE1C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		183DF1662862C99E0088FE1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				187ABE992863608900372297 /* Renderer.swift in Sources */,
+				183DF1CC2862CF090088FE1C /* LengthCounter.cpp in Sources */,
+				183DF1C22862CF090088FE1C /* Mapper3.cpp in Sources */,
+				183DF1D52862E18A0088FE1C /* Frame.swift in Sources */,
+				183DF1D22862CF090088FE1C /* NesFile.cpp in Sources */,
+				183DF1CD2862CF090088FE1C /* Triangle.cpp in Sources */,
+				183DF1BE2862CF090088FE1C /* Mapper.cpp in Sources */,
+				183DF1C92862CF090088FE1C /* Pulse.cpp in Sources */,
+				183DF1CA2862CF090088FE1C /* Timer.cpp in Sources */,
+				183DF1BD2862CF090088FE1C /* PPU.cpp in Sources */,
+				183DF1C72862CF090088FE1C /* DMC.cpp in Sources */,
+				183DF1B92862CF090088FE1C /* Bus.cpp in Sources */,
+				183DF1BC2862CF090088FE1C /* Mirroring.cpp in Sources */,
+				183DF1D02862CF090088FE1C /* APU.cpp in Sources */,
+				183DF1C52862CF090088FE1C /* Joypad.cpp in Sources */,
+				183DF1C42862CF090088FE1C /* Mapper0.cpp in Sources */,
+				187ABEA0286430DC00372297 /* DirectionKeyView.swift in Sources */,
+				187ABEA22864341900372297 /* KeyView.swift in Sources */,
+				183DF1CE2862CF090088FE1C /* StatusRegister.cpp in Sources */,
+				183DF1C82862CF090088FE1C /* Sweep.cpp in Sources */,
+				183DF1BF2862CF090088FE1C /* Cartridge.cpp in Sources */,
+				183DF1C32862CF090088FE1C /* Mapper1.cpp in Sources */,
+				183DF1702862C99E0088FE1C /* GameView.swift in Sources */,
+				183DF1BB2862CF090088FE1C /* Bus.cpp in Sources */,
+				183DF1CF2862CF090088FE1C /* Envelope.cpp in Sources */,
+				183DF16E2862C99E0088FE1C /* NesEmulatorApp.swift in Sources */,
+				183DF1C12862CF090088FE1C /* Mapper2.cpp in Sources */,
+				183DF1C62862CF090088FE1C /* literals.cpp in Sources */,
+				183DF1BA2862CF090088FE1C /* Cartridge.cpp in Sources */,
+				183DF1D12862CF090088FE1C /* CPU.cpp in Sources */,
+				187ABE9E28642FF000372297 /* ButtonKey.swift in Sources */,
+				183DF1CB2862CF090088FE1C /* Noise.cpp in Sources */,
+				187ABEA5286437AE00372297 /* ControlKeyView.swift in Sources */,
+				187ABE9B2863660800372297 /* Shaders.metal in Sources */,
+				187ABE972863603000372297 /* NesView.swift in Sources */,
+				183DF1C02862CF090088FE1C /* Mapper4.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		183DF1762862C9A00088FE1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		183DF1772862C9A00088FE1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		183DF1792862C9A00088FE1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NesEmulator/Preview Content\"";
+				DEVELOPMENT_TEAM = 52G9BSSCNT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I./nes/include",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ocfbnj.NesEmulator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "nes/Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		183DF17A2862C9A00088FE1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NesEmulator/Preview Content\"";
+				DEVELOPMENT_TEAM = 52G9BSSCNT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I./nes/include",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ocfbnj.NesEmulator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "nes/Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		183DF1652862C99E0088FE1C /* Build configuration list for PBXProject "NesEmulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				183DF1762862C9A00088FE1C /* Debug */,
+				183DF1772862C9A00088FE1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		183DF1782862C9A00088FE1C /* Build configuration list for PBXNativeTarget "NesEmulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				183DF1792862C9A00088FE1C /* Debug */,
+				183DF17A2862C9A00088FE1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 183DF1622862C99E0088FE1C /* Project object */;
+}
