@@ -38,6 +38,8 @@
 		183DF1D12862CF090088FE1C /* CPU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1B72862CF090088FE1C /* CPU.cpp */; };
 		183DF1D22862CF090088FE1C /* NesFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1B82862CF090088FE1C /* NesFile.cpp */; };
 		183DF1D52862E18A0088FE1C /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1D42862E18A0088FE1C /* Frame.swift */; };
+		186B04AB2866148F0013EFDC /* JoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186B04AA2866148F0013EFDC /* JoystickView.swift */; };
+		186B04AD28661B940013EFDC /* CGPoint+distanceTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186B04AC28661B940013EFDC /* CGPoint+distanceTo.swift */; };
 		187ABE972863603000372297 /* NesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABE962863603000372297 /* NesView.swift */; };
 		187ABE992863608900372297 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABE982863608900372297 /* Renderer.swift */; };
 		187ABE9B2863660800372297 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 187ABE9A2863660800372297 /* Shaders.metal */; };
@@ -111,6 +113,8 @@
 		183DF1B72862CF090088FE1C /* CPU.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPU.cpp; sourceTree = "<group>"; };
 		183DF1B82862CF090088FE1C /* NesFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NesFile.cpp; sourceTree = "<group>"; };
 		183DF1D42862E18A0088FE1C /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		186B04AA2866148F0013EFDC /* JoystickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickView.swift; sourceTree = "<group>"; };
+		186B04AC28661B940013EFDC /* CGPoint+distanceTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+distanceTo.swift"; sourceTree = "<group>"; };
 		187ABE962863603000372297 /* NesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NesView.swift; sourceTree = "<group>"; };
 		187ABE982863608900372297 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		187ABE9A2863660800372297 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				18A9E6C4286564A8006C6A04 /* AudioMaker.swift */,
+				186B04AC28661B940013EFDC /* CGPoint+distanceTo.swift */,
 				183DF16D2862C99E0088FE1C /* NesEmulatorApp.swift */,
 				187ABE982863608900372297 /* Renderer.swift */,
 				183DF1712862C9A00088FE1C /* Assets.xcassets */,
@@ -316,6 +321,7 @@
 			children = (
 				183DF16F2862C99E0088FE1C /* GameView.swift */,
 				18EBB74A2864A13A00903F43 /* HomeView.swift */,
+				186B04AA2866148F0013EFDC /* JoystickView.swift */,
 				187ABE962863603000372297 /* NesView.swift */,
 				187ABEA6286442CF00372297 /* Key */,
 			);
@@ -427,8 +433,10 @@
 				183DF1C32862CF090088FE1C /* Mapper1.cpp in Sources */,
 				183DF1702862C99E0088FE1C /* GameView.swift in Sources */,
 				18EBB74B2864A13A00903F43 /* HomeView.swift in Sources */,
+				186B04AB2866148F0013EFDC /* JoystickView.swift in Sources */,
 				183DF1BB2862CF090088FE1C /* Bus.cpp in Sources */,
 				18A9E6E82865FA13006C6A04 /* FunctionalKeyView.swift in Sources */,
+				186B04AD28661B940013EFDC /* CGPoint+distanceTo.swift in Sources */,
 				183DF1CF2862CF090088FE1C /* Envelope.cpp in Sources */,
 				183DF16E2862C99E0088FE1C /* NesEmulatorApp.swift in Sources */,
 				183DF1C12862CF090088FE1C /* Mapper2.cpp in Sources */,

@@ -52,7 +52,7 @@ struct GameView: View {
                         .padding()
 
                         HStack {
-                            DirectionKeyView(bus: self.bus)
+                            JoystickView(bus: self.bus)
                             Spacer()
                             ControlKeyView(bus: self.bus)
                         }
