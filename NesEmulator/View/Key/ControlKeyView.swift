@@ -13,27 +13,39 @@ struct ControlKeyView: View {
     var body: some View {
         VStack {
             HStack {
-                KeyView(actions: (
-                    { () in press_button(self.bus, ButtonKey.a.joypadKey) },
-                    { () in release_button(self.bus, ButtonKey.a.joypadKey) }
-                ))
+                ZStack {
+                    KeyView(actions: (
+                        { () in press_button(self.bus, ButtonKey.a.joypadKey) },
+                        { () in release_button(self.bus, ButtonKey.a.joypadKey) }
+                    ))
+                    Text("A")
+                }
 
-                KeyView(actions: (
-                    { () in press_button(self.bus, ButtonKey.b.joypadKey) },
-                    { () in release_button(self.bus, ButtonKey.b.joypadKey) }
-                ))
+                ZStack {
+                    KeyView(actions: (
+                        { () in press_button(self.bus, ButtonKey.b.joypadKey) },
+                        { () in release_button(self.bus, ButtonKey.b.joypadKey) }
+                    ))
+                    Text("B")
+                }
             }
 
             HStack {
-                KeyView(actions: (
-                    { () in press_button(self.bus, ButtonKey.select.joypadKey) },
-                    { () in release_button(self.bus, ButtonKey.select.joypadKey) }
-                ))
+                ZStack {
+                    KeyView(actions: (
+                        { () in press_button(self.bus, ButtonKey.select.joypadKey) },
+                        { () in release_button(self.bus, ButtonKey.select.joypadKey) }
+                    ))
+                    Text("Select")
+                }
 
-                KeyView(actions: (
-                    { () in press_button(self.bus, ButtonKey.start.joypadKey) },
-                    { () in release_button(self.bus, ButtonKey.start.joypadKey) }
-                ))
+                ZStack {
+                    KeyView(actions: (
+                        { () in press_button(self.bus, ButtonKey.start.joypadKey) },
+                        { () in release_button(self.bus, ButtonKey.start.joypadKey) }
+                    ))
+                    Text("Start")
+                }
             }
         }
     }

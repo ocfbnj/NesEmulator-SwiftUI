@@ -10,6 +10,7 @@ import SwiftUI
 
 struct GameView: View {
     static let frameRate = 60.0
+    private static let audioMaker = AudioMaker()
 
     var name = "Super Mario Bros"
     var romData = NSDataAsset(name: "super_mario_bros")!.data
@@ -31,6 +32,25 @@ struct GameView: View {
 
                     VStack {
                         Spacer()
+
+                        HStack {
+                            ZStack {
+                                KeyView(actions: (
+                                    { () in },
+                                    { () in
+                                        quick_reset(bus)
+                                        GameView.audioMaker.reset()
+                                    }
+                                ))
+                                Text("Reset")
+                            }
+
+                            Spacer()
+
+                            FunctionalKeyView(bus: self.bus)
+                        }
+                        .padding()
+
                         HStack {
                             DirectionKeyView(bus: self.bus)
                             Spacer()
@@ -53,11 +73,14 @@ struct GameView: View {
                 return
             }
 
+            GameView.audioMaker.play()
             runNesCore()
         }
         .onDisappear {
+            GameView.audioMaker.stop()
             cancel?.cancel()
             free_bus(self.bus)
+            clear_shared_data()
         }
     }
 
@@ -78,6 +101,10 @@ struct GameView: View {
 
         bus = alloc_bus()
         insert_cartridge(bus, cartridge)
+        set_sample_rate(bus, Int32(AudioMaker.sampleRate))
+        set_sample_cb(bus, { sample in
+            GameView.audioMaker.pushSample(sample)
+        })
         power_up(bus)
 
         return true

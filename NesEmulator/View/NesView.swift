@@ -16,7 +16,7 @@ struct NesView: UIViewRepresentable {
     }
 
     func makeUIView(context: Context) -> MTKView {
-        let mtkView = MTKView()
+        let mtkView = MTKView(frame: CGRect(x: 0, y: 0, width: Frame.width, height: Frame.height))
         mtkView.delegate = context.coordinator
         mtkView.preferredFramesPerSecond = Int(GameView.frameRate)
         mtkView.enableSetNeedsDisplay = true

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var games = Games()
-    
+
     var body: some View {
         NavigationView {
             List(games.data) { game in
@@ -21,7 +21,7 @@ struct HomeView: View {
             }
             .navigationTitle("Games")
         }
-        
+        .navigationViewStyle(.stack)
     }
 }
 

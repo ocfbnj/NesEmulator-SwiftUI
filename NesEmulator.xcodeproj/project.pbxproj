@@ -45,6 +45,8 @@
 		187ABEA0286430DC00372297 /* DirectionKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABE9F286430DC00372297 /* DirectionKeyView.swift */; };
 		187ABEA22864341900372297 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABEA12864341900372297 /* KeyView.swift */; };
 		187ABEA5286437AE00372297 /* ControlKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABEA4286437AE00372297 /* ControlKeyView.swift */; };
+		18A9E6C5286564A8006C6A04 /* AudioMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9E6C4286564A8006C6A04 /* AudioMaker.swift */; };
+		18A9E6E82865FA13006C6A04 /* FunctionalKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9E6E72865FA13006C6A04 /* FunctionalKeyView.swift */; };
 		18EBB74B2864A13A00903F43 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBB74A2864A13A00903F43 /* HomeView.swift */; };
 		18EBB74D2864A1C800903F43 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EBB74C2864A1C800903F43 /* Game.swift */; };
 /* End PBXBuildFile section */
@@ -117,6 +119,8 @@
 		187ABE9F286430DC00372297 /* DirectionKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionKeyView.swift; sourceTree = "<group>"; };
 		187ABEA12864341900372297 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
 		187ABEA4286437AE00372297 /* ControlKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlKeyView.swift; sourceTree = "<group>"; };
+		18A9E6C4286564A8006C6A04 /* AudioMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMaker.swift; sourceTree = "<group>"; };
+		18A9E6E72865FA13006C6A04 /* FunctionalKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalKeyView.swift; sourceTree = "<group>"; };
 		18EBB74A2864A13A00903F43 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		18EBB74C2864A1C800903F43 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +156,7 @@
 		183DF16C2862C99E0088FE1C /* NesEmulator */ = {
 			isa = PBXGroup;
 			children = (
+				18A9E6C4286564A8006C6A04 /* AudioMaker.swift */,
 				183DF16D2862C99E0088FE1C /* NesEmulatorApp.swift */,
 				187ABE982863608900372297 /* Renderer.swift */,
 				183DF1712862C9A00088FE1C /* Assets.xcassets */,
@@ -322,6 +327,7 @@
 			children = (
 				187ABEA4286437AE00372297 /* ControlKeyView.swift */,
 				187ABE9F286430DC00372297 /* DirectionKeyView.swift */,
+				18A9E6E72865FA13006C6A04 /* FunctionalKeyView.swift */,
 				187ABEA12864341900372297 /* KeyView.swift */,
 			);
 			path = Key;
@@ -422,6 +428,7 @@
 				183DF1702862C99E0088FE1C /* GameView.swift in Sources */,
 				18EBB74B2864A13A00903F43 /* HomeView.swift in Sources */,
 				183DF1BB2862CF090088FE1C /* Bus.cpp in Sources */,
+				18A9E6E82865FA13006C6A04 /* FunctionalKeyView.swift in Sources */,
 				183DF1CF2862CF090088FE1C /* Envelope.cpp in Sources */,
 				183DF16E2862C99E0088FE1C /* NesEmulatorApp.swift in Sources */,
 				183DF1C12862CF090088FE1C /* Mapper2.cpp in Sources */,
@@ -431,6 +438,7 @@
 				187ABE9E28642FF000372297 /* ButtonKey.swift in Sources */,
 				183DF1CB2862CF090088FE1C /* Noise.cpp in Sources */,
 				18EBB74D2864A1C800903F43 /* Game.swift in Sources */,
+				18A9E6C5286564A8006C6A04 /* AudioMaker.swift in Sources */,
 				187ABEA5286437AE00372297 /* ControlKeyView.swift in Sources */,
 				187ABE9B2863660800372297 /* Shaders.metal in Sources */,
 				187ABE972863603000372297 /* NesView.swift in Sources */,

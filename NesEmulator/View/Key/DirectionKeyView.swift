@@ -12,27 +12,39 @@ struct DirectionKeyView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            KeyView(actions: (
-                { () in press_button(self.bus, ButtonKey.up.joypadKey) },
-                { () in release_button(self.bus, ButtonKey.up.joypadKey) }
-            ))
-
-            HStack(spacing: 30) {
+            ZStack {
                 KeyView(actions: (
-                    { () in press_button(self.bus, ButtonKey.left.joypadKey) },
-                    { () in release_button(self.bus, ButtonKey.left.joypadKey) }
+                    { () in press_button(self.bus, ButtonKey.up.joypadKey) },
+                    { () in release_button(self.bus, ButtonKey.up.joypadKey) }
                 ))
-
-                KeyView(actions: (
-                    { () in press_button(self.bus, ButtonKey.right.joypadKey) },
-                    { () in release_button(self.bus, ButtonKey.right.joypadKey) }
-                ))
+                Text("Up")
             }
 
-            KeyView(actions: (
-                { () in press_button(self.bus, ButtonKey.down.joypadKey) },
-                { () in release_button(self.bus, ButtonKey.down.joypadKey) }
-            ))
+            HStack(spacing: 30) {
+                ZStack {
+                    KeyView(actions: (
+                        { () in press_button(self.bus, ButtonKey.left.joypadKey) },
+                        { () in release_button(self.bus, ButtonKey.left.joypadKey) }
+                    ))
+                    Text("Left")
+                }
+
+                ZStack {
+                    KeyView(actions: (
+                        { () in press_button(self.bus, ButtonKey.right.joypadKey) },
+                        { () in release_button(self.bus, ButtonKey.right.joypadKey) }
+                    ))
+                    Text("Right")
+                }
+            }
+
+            ZStack {
+                KeyView(actions: (
+                    { () in press_button(self.bus, ButtonKey.down.joypadKey) },
+                    { () in release_button(self.bus, ButtonKey.down.joypadKey) }
+                ))
+                Text("Down")
+            }
         }
     }
 }

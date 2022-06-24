@@ -6,6 +6,8 @@
 //
 
 #include <unordered_map>
+#include <string>
+#include <sstream>
 
 #include <nes/Bus.h>
 
@@ -16,6 +18,7 @@ constexpr auto Width = 256;
 constexpr auto Height = 240;
 
 static CColor data[Width * Height];
+static std::string dumpedData;
 
 CBus alloc_bus()
 {
@@ -37,6 +40,12 @@ void insert_cartridge(CBus cbus, CCartridge ccartridge)
 	Cartridge *cartridge = static_cast<Cartridge *>(ccartridge.ptr);
 
 	bus->insert(*cartridge);
+}
+
+void set_sample_rate(struct CBus cbus, int rate)
+{
+	Bus *bus = static_cast<Bus *>(cbus.ptr);
+	bus->getAPU().setSampleRate(rate);
 }
 
 void set_sample_cb(CBus cbus, sample_cb cb)
@@ -87,4 +96,36 @@ void release_button(CBus cbus, CJoypadButton btn)
 {
 	Bus *bus = static_cast<Bus *>(cbus.ptr);
 	bus->getJoypad1().release(buttonMap[btn]);
+}
+
+void quick_reset(CBus cbus)
+{
+	Bus *bus = static_cast<Bus *>(cbus.ptr);
+	bus->reset();
+}
+
+void quick_save(CBus cbus)
+{
+	Bus *bus = static_cast<Bus *>(cbus.ptr);
+
+	std::ostringstream oss;
+	bus->serialize(oss);
+
+	dumpedData = oss.str();
+}
+
+void quick_restore(CBus cbus)
+{
+	Bus *bus = static_cast<Bus *>(cbus.ptr);
+	if (dumpedData.empty()) {
+		return;
+	}
+
+	std::istringstream iss{dumpedData};
+	bus->deserialize(iss);
+}
+
+void clear_shared_data()
+{
+    dumpedData.clear();
 }
