@@ -9,39 +9,30 @@ import Foundation
 import MetalKit
 
 class Renderer: NSObject, MTKViewDelegate {
-    var parent: NesView
+    private let parent: NesView
 
-    var metalDevice: MTLDevice!
-    var metalCommandQueue: MTLCommandQueue!
+    private let metalDevice = MTLCreateSystemDefaultDevice()!
+    private let metalCommandQueue: MTLCommandQueue
 
-    let pipelineState: MTLRenderPipelineState
-    let vertexBuffer: MTLBuffer
-    let indexBuffer: MTLBuffer
+    private let pipelineState: MTLRenderPipelineState
+    private let vertexBuffer: MTLBuffer
+    private let indexBuffer: MTLBuffer
 
-    let texture: MTLTexture
-    let region = MTLRegion(origin: MTLOrigin(x: 0, y: 0, z: 0), size: MTLSize(width: Frame.width, height: Frame.height, depth: 1))
-    let bytesPerRow = 4 * Frame.width
+    private let texture: MTLTexture
+    private let region = MTLRegion(origin: MTLOrigin(x: 0, y: 0, z: 0), size: MTLSize(width: Frame.width, height: Frame.height, depth: 1))
+    private let bytesPerRow = 4 * Frame.width
 
     init(_ parent: NesView) {
         self.parent = parent
 
-        if let metalDevice = MTLCreateSystemDefaultDevice() {
-            self.metalDevice = metalDevice
-        }
-
-        metalCommandQueue = metalDevice.makeCommandQueue()
+        metalCommandQueue = metalDevice.makeCommandQueue()!
 
         let pipeDescriptor = MTLRenderPipelineDescriptor()
         let library = metalDevice.makeDefaultLibrary()
         pipeDescriptor.vertexFunction = library?.makeFunction(name: "vertexShader")
         pipeDescriptor.fragmentFunction = library?.makeFunction(name: "fragmentShader")
         pipeDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
-
-        do {
-            try pipelineState = metalDevice.makeRenderPipelineState(descriptor: pipeDescriptor)
-        } catch {
-            fatalError("make render pipeline state failed")
-        }
+        try! pipelineState = metalDevice.makeRenderPipelineState(descriptor: pipeDescriptor)
 
         let vertices = [
             Vertex(position: [-1, -1], texcoord: [0, 0]),
@@ -74,27 +65,38 @@ class Renderer: NSObject, MTKViewDelegate {
     func draw(in view: MTKView) {
         guard let drawable = view.currentDrawable else { return }
 
-        let commandBuffer = metalCommandQueue.makeCommandBuffer()
-        let renderPassDescirptor = view.currentRenderPassDescriptor
-        renderPassDescirptor?.colorAttachments[0].clearColor = MTLClearColor(red: 0, green: 0.5, blue: 0.5, alpha: 1.0)
-        renderPassDescirptor?.colorAttachments[0].loadAction = .clear
-        renderPassDescirptor?.colorAttachments[0].storeAction = .store
+        let renderPassDescirptor = view.currentRenderPassDescriptor!
+        renderPassDescirptor.colorAttachments[0].clearColor = MTLClearColor(red: 0, green: 0.5, blue: 0.5, alpha: 1.0)
+        renderPassDescirptor.colorAttachments[0].loadAction = .clear
+        renderPassDescirptor.colorAttachments[0].storeAction = .store
 
-        let renderEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescirptor!)
-        renderEncoder?.setRenderPipelineState(pipelineState)
+        let commandBuffer = metalCommandQueue.makeCommandBuffer()!
+        let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescirptor)!
+        renderEncoder.setRenderPipelineState(pipelineState)
 
         if parent.frameData.cframe.data != nil {
-            renderEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
 
-            texture.replace(region: region, mipmapLevel: 0, withBytes: parent.frameData.cframe.data, bytesPerRow: bytesPerRow)
+            texture.replace(
+                region: region,
+                mipmapLevel: 0,
+                withBytes: parent.frameData.cframe.data,
+                bytesPerRow: bytesPerRow
+            )
 
-            renderEncoder?.setFragmentTexture(texture, index: 0)
-            renderEncoder?.drawIndexedPrimitives(type: .triangle, indexCount: 6, indexType: .uint16, indexBuffer: indexBuffer, indexBufferOffset: 0)
+            renderEncoder.setFragmentTexture(texture, index: 0)
+            renderEncoder.drawIndexedPrimitives(
+                type: .triangle,
+                indexCount: 6,
+                indexType: .uint16,
+                indexBuffer: indexBuffer,
+                indexBufferOffset: 0
+            )
         }
 
-        renderEncoder?.endEncoding()
+        renderEncoder.endEncoding()
 
-        commandBuffer?.present(drawable)
-        commandBuffer?.commit()
+        commandBuffer.present(drawable)
+        commandBuffer.commit()
     }
 }

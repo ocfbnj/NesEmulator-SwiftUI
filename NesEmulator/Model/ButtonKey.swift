@@ -18,6 +18,6 @@ enum ButtonKey: UInt8 {
     case a = 0b00000001
 
     var joypadKey: CJoypadButton {
-        CJoypadButton(UInt32(self.rawValue))
+        CJoypadButton(UInt32(rawValue))
     }
 }

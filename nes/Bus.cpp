@@ -127,5 +127,5 @@ void quick_restore(CBus cbus)
 
 void clear_shared_data()
 {
-    dumpedData.clear();
+	dumpedData.clear();
 }

@@ -15,18 +15,18 @@ struct ControlKeyView: View {
             HStack {
                 ZStack {
                     KeyView(actions: (
-                        { () in press_button(self.bus, ButtonKey.a.joypadKey) },
-                        { () in release_button(self.bus, ButtonKey.a.joypadKey) }
-                    ))
-                    Text("A")
-                }
-
-                ZStack {
-                    KeyView(actions: (
                         { () in press_button(self.bus, ButtonKey.b.joypadKey) },
                         { () in release_button(self.bus, ButtonKey.b.joypadKey) }
                     ))
                     Text("B")
+                }
+
+                ZStack {
+                    KeyView(actions: (
+                        { () in press_button(self.bus, ButtonKey.a.joypadKey) },
+                        { () in release_button(self.bus, ButtonKey.a.joypadKey) }
+                    ))
+                    Text("A")
                 }
             }
 
@@ -36,7 +36,7 @@ struct ControlKeyView: View {
                         { () in press_button(self.bus, ButtonKey.select.joypadKey) },
                         { () in release_button(self.bus, ButtonKey.select.joypadKey) }
                     ))
-                    Text("Select")
+                    Text("Sel")
                 }
 
                 ZStack {

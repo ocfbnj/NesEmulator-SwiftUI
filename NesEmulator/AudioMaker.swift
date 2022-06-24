@@ -11,15 +11,15 @@ import Foundation
 
 class AudioMaker {
     static let sampleRate = 44100
-    static let sampleCountPerFrame = Int(Double(sampleRate) / GameView.frameRate)
 
-    private static let frameCount = AVAudioFrameCount(AudioMaker.sampleCountPerFrame)
-    private static let format = AVAudioFormat(standardFormatWithSampleRate: Double(AudioMaker.sampleRate), channels: 1)!
+    private static let sampleCountPerFrame = sampleRate / GameView.frameRate
+    private static let frameCount = AVAudioFrameCount(sampleCountPerFrame)
+    private static let format = AVAudioFormat(standardFormatWithSampleRate: Double(sampleRate), channels: 1)!
 
-    var ae = AVAudioEngine()
-    var player = AVAudioPlayerNode()
-    var buffer = AVAudioPCMBuffer(pcmFormat: AudioMaker.format, frameCapacity: AudioMaker.frameCount)!
-    var sampleCount = 0
+    private let ae = AVAudioEngine()
+    private let player = AVAudioPlayerNode()
+    private let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: frameCount)!
+    private var sampleCount = 0
 
     init() {
         buffer.frameLength = AudioMaker.frameCount
@@ -34,15 +34,15 @@ class AudioMaker {
         player.play()
     }
 
+    func pause() {
+        player.pause()
+    }
+
     func stop() {
         sampleCount = 0
         player.stop()
     }
 
-    func pause() {
-        player.pause()
-    }
-    
     func reset() {
         stop()
         play()

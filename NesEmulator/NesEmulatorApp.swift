@@ -15,11 +15,11 @@ struct NesEmulatorApp: App {
             HomeView()
         }
     }
-    var audioSessionObserver: Any!
+
+    private var audioSessionObserver: Any!
 
     init() {
-        let notificationCenter = NotificationCenter.default
-        audioSessionObserver = notificationCenter.addObserver(
+        audioSessionObserver = NotificationCenter.default.addObserver(
             forName: AVAudioSession.mediaServicesWereResetNotification,
             object: nil,
             queue: nil

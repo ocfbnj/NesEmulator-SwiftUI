@@ -15,6 +15,7 @@ struct KeyView: View {
 
     var body: some View {
         Button {
+            // do nothing
         } label: {
             Circle()
                 .frame(width: KeyView.size, height: KeyView.size)

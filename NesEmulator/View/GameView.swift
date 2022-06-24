@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 struct GameView: View {
-    static let frameRate = 60.0
+    static let frameRate = 60
     private static let audioMaker = AudioMaker()
 
     var name = "Super Mario Bros"
@@ -111,7 +111,7 @@ struct GameView: View {
     }
 
     private func runNesCore() {
-        cancel = Timer.publish(every: 1.0 / GameView.frameRate, on: .main, in: .default)
+        cancel = Timer.publish(every: 1.0 / Double(GameView.frameRate), on: .main, in: .default)
             .autoconnect()
             .sink { _ in
                 let cframe = perform_once(self.bus)
