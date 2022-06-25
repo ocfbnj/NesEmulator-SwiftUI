@@ -12,7 +12,7 @@ struct JoystickView: View {
 
     @State var position: CGPoint?
 
-    private let r1 = 80.0
+    private let r1 = 70.0
     private let r2 = 30.0
 
     var body: some View {
@@ -27,7 +27,7 @@ struct JoystickView: View {
                     .foregroundColor(.primary)
                     .opacity(0.1)
                     .gesture(
-                        DragGesture()
+                        DragGesture(minimumDistance: 0)
                             .onChanged({ value in
                                 moveTo(value.location, center)
                             })
