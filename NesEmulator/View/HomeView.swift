@@ -15,33 +15,62 @@ struct HomeView: View {
     @FetchRequest(sortDescriptors: [SortDescriptor(\.name)])
     private var roms: FetchedResults<Rom>
 
+    @ObservedObject private var viewModel = ViewModel()
+
     var body: some View {
         NavigationView {
-            List {
-                ForEach(roms, id: \.self) { rom in
-                    NavigationLink {
-                        nextView(with: rom)
-                    } label: {
-                        Text("\(rom.name!)")
+            Group {
+                List {
+                    ForEach(roms, id: \.self) { rom in
+                        NavigationLink {
+                            nextView(with: rom)
+                        } label: {
+                            Text("\(rom.name!)")
+                        }
+                    }
+                    .onDelete(perform: deleteRom)
+
+                    if roms.isEmpty {
+                        HStack {
+                            Spacer()
+
+                            VStack {
+                                Text("There are no roms")
+                                    .font(.title2)
+
+                                Button("Load default roms") {
+                                    loadDefaultRom()
+                                }
+                                .buttonStyle(.borderedProminent)
+                            }
+                            .padding()
+
+                            Spacer()
+                        }
                     }
                 }
-                .onDelete(perform: deleteRom)
             }
             .navigationTitle("Games")
             .toolbar {
-                HStack {
-                    NavigationLink {
-                        DocumentPicker(complete: { url in
-                            let filename = url.lastPathComponent
-                            let end = filename.index(filename.endIndex, offsetBy: -".nes".count)
-                            let name = String(filename[..<end])
-
-                            addRom(name: name, url: url)
-                        })
-                            .navigationBarHidden(true)
-                    } label: {
-                        Image(systemName: "plus")
+                Menu {
+                    Button("\(PopList.loadDefault.description)") {
+                        loadDefaultRom()
                     }
+
+                    Button("\(PopList.addRom.description)") {
+                        viewModel.isPresented.toggle()
+                    }
+                } label: {
+                    Image(systemName: "plus")
+                }
+                .sheet(isPresented: $viewModel.isPresented) {
+                    DocumentPicker(complete: { url in
+                        let filename = url.lastPathComponent
+                        let end = filename.index(filename.endIndex, offsetBy: -".nes".count)
+                        let name = String(filename[..<end])
+
+                        addRom(name: name, url: url)
+                    })
                 }
             }
         }

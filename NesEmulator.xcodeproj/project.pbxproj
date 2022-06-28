@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		180A47A22866E4EA00A82F16 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A47A12866E4EA00A82F16 /* DocumentPicker.swift */; };
 		180C86EE286AEF40009E7C0D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C86ED286AEF40009E7C0D /* DataController.swift */; };
+		180C86F0286B3F02009E7C0D /* HomeView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C86EF286B3F02009E7C0D /* HomeView+ViewModel.swift */; };
 		183DF16E2862C99E0088FE1C /* NesEmulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DF16D2862C99E0088FE1C /* NesEmulatorApp.swift */; };
 		183DF1702862C99E0088FE1C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DF16F2862C99E0088FE1C /* GameView.swift */; };
 		183DF1722862C9A00088FE1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183DF1712862C9A00088FE1C /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		180A47A12866E4EA00A82F16 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 		180C86ED286AEF40009E7C0D /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		180C86EF286B3F02009E7C0D /* HomeView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+ViewModel.swift"; sourceTree = "<group>"; };
 		183DF16A2862C99E0088FE1C /* NesEmulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NesEmulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		183DF16D2862C99E0088FE1C /* NesEmulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NesEmulatorApp.swift; sourceTree = "<group>"; };
 		183DF16F2862C99E0088FE1C /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				186B04AC28661B940013EFDC /* CGPoint+distanceTo.swift */,
+				180C86EF286B3F02009E7C0D /* HomeView+ViewModel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				183DF16E2862C99E0088FE1C /* NesEmulatorApp.swift in Sources */,
 				185B91812869EE8C003F88F5 /* Model.xcdatamodeld in Sources */,
 				180C86EE286AEF40009E7C0D /* DataController.swift in Sources */,
+				180C86F0286B3F02009E7C0D /* HomeView+ViewModel.swift in Sources */,
 				183DF1C12862CF090088FE1C /* Mapper2.cpp in Sources */,
 				183DF1C62862CF090088FE1C /* literals.cpp in Sources */,
 				183DF1BA2862CF090088FE1C /* Cartridge.cpp in Sources */,
