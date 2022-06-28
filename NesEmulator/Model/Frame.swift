@@ -13,7 +13,7 @@ final class Frame: ObservableObject {
     static let height = 240
     static let ratio = 256.0 / 240.0
 
-    @Published var cframe = CFrame(data: nil)
+    @Published private(set) var cframe = CFrame(data: nil)
 
     func update(_ cframe: CFrame) {
         self.cframe.data = cframe.data

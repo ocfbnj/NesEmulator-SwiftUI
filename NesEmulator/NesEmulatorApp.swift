@@ -10,13 +10,15 @@ import SwiftUI
 
 @main
 struct NesEmulatorApp: App {
+    @StateObject private var dataController = DataController()
+    private var audioSessionObserver: Any!
+
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
-
-    private var audioSessionObserver: Any!
 
     init() {
         audioSessionObserver = NotificationCenter.default.addObserver(
