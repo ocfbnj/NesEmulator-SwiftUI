@@ -42,6 +42,9 @@
 		183DF1D22862CF090088FE1C /* NesFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1B82862CF090088FE1C /* NesFile.cpp */; };
 		183DF1D52862E18A0088FE1C /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183DF1D42862E18A0088FE1C /* Frame.swift */; };
 		185B91812869EE8C003F88F5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 185B917F2869EE8C003F88F5 /* Model.xcdatamodeld */; };
+		1866F8C8286DEEB800DC9EB3 /* Super Mario Bros.nes in Resources */ = {isa = PBXBuildFile; fileRef = 1866F8C5286DEEB800DC9EB3 /* Super Mario Bros.nes */; };
+		1866F8C9286DEEB800DC9EB3 /* Duck Tales.nes in Resources */ = {isa = PBXBuildFile; fileRef = 1866F8C6286DEEB800DC9EB3 /* Duck Tales.nes */; };
+		1866F8CA286DEEB800DC9EB3 /* Contra.nes in Resources */ = {isa = PBXBuildFile; fileRef = 1866F8C7286DEEB800DC9EB3 /* Contra.nes */; };
 		186B04AB2866148F0013EFDC /* JoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186B04AA2866148F0013EFDC /* JoystickView.swift */; };
 		186B04AD28661B940013EFDC /* CGPoint+distanceTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186B04AC28661B940013EFDC /* CGPoint+distanceTo.swift */; };
 		187ABE972863603000372297 /* NesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187ABE962863603000372297 /* NesView.swift */; };
@@ -120,6 +123,9 @@
 		183DF1B82862CF090088FE1C /* NesFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NesFile.cpp; sourceTree = "<group>"; };
 		183DF1D42862E18A0088FE1C /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
 		185B91802869EE8C003F88F5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		1866F8C5286DEEB800DC9EB3 /* Super Mario Bros.nes */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Super Mario Bros.nes"; sourceTree = "<group>"; };
+		1866F8C6286DEEB800DC9EB3 /* Duck Tales.nes */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Duck Tales.nes"; sourceTree = "<group>"; };
+		1866F8C7286DEEB800DC9EB3 /* Contra.nes */ = {isa = PBXFileReference; lastKnownFileType = file; path = Contra.nes; sourceTree = "<group>"; };
 		186B04AA2866148F0013EFDC /* JoystickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoystickView.swift; sourceTree = "<group>"; };
 		186B04AC28661B940013EFDC /* CGPoint+distanceTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+distanceTo.swift"; sourceTree = "<group>"; };
 		187ABE962863603000372297 /* NesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NesView.swift; sourceTree = "<group>"; };
@@ -192,6 +198,7 @@
 				185B917F2869EE8C003F88F5 /* Model.xcdatamodeld */,
 				180C86AA2869F898009E7C0D /* NesHelper */,
 				183DF1732862C9A00088FE1C /* Preview Content */,
+				1866F8C4286DEE9600DC9EB3 /* Roms */,
 				183DF1D62862FBD10088FE1C /* View */,
 			);
 			path = NesEmulator;
@@ -344,13 +351,23 @@
 			isa = PBXGroup;
 			children = (
 				180A47A12866E4EA00A82F16 /* DocumentPicker.swift */,
+				183DF16F2862C99E0088FE1C /* GameView.swift */,
 				18EBB74A2864A13A00903F43 /* HomeView.swift */,
 				186B04AA2866148F0013EFDC /* JoystickView.swift */,
-				183DF16F2862C99E0088FE1C /* GameView.swift */,
 				187ABE962863603000372297 /* NesView.swift */,
 				187ABEA6286442CF00372297 /* Key */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1866F8C4286DEE9600DC9EB3 /* Roms */ = {
+			isa = PBXGroup;
+			children = (
+				1866F8C7286DEEB800DC9EB3 /* Contra.nes */,
+				1866F8C6286DEEB800DC9EB3 /* Duck Tales.nes */,
+				1866F8C5286DEEB800DC9EB3 /* Super Mario Bros.nes */,
+			);
+			path = Roms;
 			sourceTree = "<group>";
 		};
 		187ABEA6286442CF00372297 /* Key */ = {
@@ -423,7 +440,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				183DF1752862C9A00088FE1C /* Preview Assets.xcassets in Resources */,
+				1866F8C9286DEEB800DC9EB3 /* Duck Tales.nes in Resources */,
+				1866F8C8286DEEB800DC9EB3 /* Super Mario Bros.nes in Resources */,
 				183DF1722862C9A00088FE1C /* Assets.xcassets in Resources */,
+				1866F8CA286DEEB800DC9EB3 /* Contra.nes in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

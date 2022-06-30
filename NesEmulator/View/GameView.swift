@@ -12,8 +12,8 @@ struct GameView: View {
     static let frameRate = 60
     private static let audioMaker = AudioMaker()
 
-    var name = "Super Mario Bros"
-    var romData = NSDataAsset(name: "super_mario_bros")!.data
+    var name: String?
+    var romData: Data?
 
     @State var bus = CBus(ptr: nil)
     @State var invalid = false
@@ -61,13 +61,18 @@ struct GameView: View {
                     .opacity(0.6)
                 }
             } else {
-                Text("Unsupported NES ROM")
+                Text("Cannot load this ROM")
                     .font(.title)
             }
         }
-        .navigationTitle(name)
+        .navigationTitle(name ?? "No Rom")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
+            guard let romData = romData else {
+                invalid = true
+                return
+            }
+
             invalid = !loadRom(romData)
             if invalid {
                 return

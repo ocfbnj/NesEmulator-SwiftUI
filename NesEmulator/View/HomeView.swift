@@ -83,22 +83,16 @@ struct HomeView: View {
     }
 
     private func loadDefaultRom() {
-        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let defaultRom = [
-            "Super Mario Bros",
-            "Contra",
-            "Duck Tales",
-        ]
+        let fm = FileManager.default
+        let resourcePath = Bundle.main.resourcePath!
+        let resourceUrl = Bundle.main.resourceURL!
+        let items = try! fm.contentsOfDirectory(atPath: resourcePath)
 
-        for romName in defaultRom {
-            let romUrl = url.appendingPathComponent("\(romName).nes")
+        for rom in items.filter({ $0.hasSuffix(".nes") }) {
+            let romName = String(rom.dropLast(".nes".count))
+            let romUrl = resourceUrl.appendingPathComponent(rom)
 
-            do {
-                try NSDataAsset(name: romName)?.data.write(to: romUrl)
-                addRom(name: romName, url: romUrl)
-            } catch let err {
-                print(err.localizedDescription)
-            }
+            addRom(name: romName, url: romUrl)
         }
 
         save()
